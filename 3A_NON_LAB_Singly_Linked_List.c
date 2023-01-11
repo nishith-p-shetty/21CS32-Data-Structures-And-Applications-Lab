@@ -276,46 +276,46 @@ int main()
             sf("%d", &id);
             pf("Enter Sem : ");
             sf("%d", &sem);
-            switch (choice)
-            {
-                case 1 :
-                        first = addAtFront(name, id, sem, first);
-                        break;
-                
-                case 2 :
-                        first = addAtRear(name, id, sem, first);
-                        break;
+        }
+        switch (choice)
+        {
+            case 1 :
+                    first = addAtFront(name, id, sem, first);
+                    break;
+            
+            case 2 :
+                    first = addAtRear(name, id, sem, first);
+                    break;
 
-                case 3 :
-                        pf("Enter Position to Insert : ");
-                        sf("%d", &position);
-                        first = addAtPosition(name, id, sem, position, first);
-                        break;
+            case 3 :
+                    pf("Enter Position to Insert : ");
+                    sf("%d", &position);
+                    first = addAtPosition(name, id, sem, position, first);
+                    break;
 
-                default:
-                        break;
-            }
-        }
-        if ( choice == 4)
-        {
-            pf("Enter ID to Delete : ");
-            sf("%d", &id);
-            first = deleteStudent(id, first);
-        }
-        if ( choice == 5)
-        {
-            pf("Enter ID to Search : ");
-            sf("%d", &id);
-            first = search(id, first);
-        }
-        if ( choice == 6)
-        {
-            display(first);
-        }
-        if ( choice == 7)
-        {
-            pf("TERMINATING.\n");
-            exit(0);
+            case 4 :
+                    pf("Enter ID to Delete : ");
+                    sf("%d", &id);
+                    first = deleteStudent(id, first);
+                    break;
+
+            case 5 :
+                    pf("Enter ID to Search : ");
+                    sf("%d", &id);
+                    first = search(id, first);
+                    break;
+
+            case 6 :
+                    display(first);
+                    break;
+
+            case 7 :
+                    pf("TERMINATING.\n");
+                    exit(0);
+                    break;
+
+            default:
+                    break;
         }
     }
     return 0;
