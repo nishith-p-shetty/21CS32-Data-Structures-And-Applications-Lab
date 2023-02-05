@@ -53,7 +53,7 @@ int main()
         pf("\n");
     }
     pf("Enter the source vertex : ");
-    sf("%d", &source);
+    sf("%d", &u);
     for (i = 0 ; i < n ; i++)
     {
         s[i] = 0;
