@@ -5,7 +5,31 @@
             b. Print all the nodes reachable from a given starting node in a diagraph using DFS/BFS method.
 
     OUTPUT :
-        
+        Enter the number of nodes : 7
+        Enter the Adjacency Matrix :
+        0 1 1 0 0 0 0 
+        0 0 0 1 0 0 0 
+        0 0 0 0 1 0 0 
+        0 0 0 0 0 1 0 
+        0 0 0 0 0 1 0 
+        0 0 0 0 0 0 0 
+        0 0 0 0 1 1 0
+        The Adjacency Matrix is :
+        0 1 1 0 0 0 0 
+        0 0 0 1 0 0 0 
+        0 0 0 0 1 0 0 
+        0 0 0 0 0 1 0 
+        0 0 0 0 0 1 0 
+        0 0 0 0 0 0 0 
+        0 0 0 0 1 1 0 
+        Enter the source vertex : 6
+        0 is not reachable
+        1 is not reachable
+        2 is not reachable
+        3 is not reachable
+        4 is reachable
+        5 is reachable
+        6 is reachable
 */
 #include <stdio.h>
 #include <stdlib.h>
