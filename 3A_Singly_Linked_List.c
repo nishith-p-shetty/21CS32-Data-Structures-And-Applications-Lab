@@ -189,7 +189,7 @@ STUD search(int id, STUD first)
         return NULL;
     }
     current = first;
-    while (current->link != NULL)
+    while (current != NULL)
     {
         if ( id == current->id )
         {
@@ -197,17 +197,13 @@ STUD search(int id, STUD first)
         }
         current = current->link;
     }
-    if ( current->link == NULL && current->id != id)
+    if ( current == NULL)
     {
         pf("Student ID = %d, not found. Item update\n", id);
         pf("Enter information of the student to add at end.\n");
         pf("ID : ");
         sf("%d", &id);
-        STUD temp = getnode();
-        temp->id = id;
-        temp->link = NULL;
-        current->link = temp;
-        return first;
+        return addAtRear(id, first);
     }
     pf("Student found with the following information : \n");
     pf("ID : %d\n", current->id);
