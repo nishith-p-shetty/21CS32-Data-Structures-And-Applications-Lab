@@ -7,7 +7,38 @@
             b. Create a DLL queue of N Professor’s Data
         Display the status of DLL and count the number of nodes in it.
     OUTPUT :
-        
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 1
+        Enter item to insert DLL by inserting at front : 5
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 1
+        Enter item to insert DLL by inserting at front : 3
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 4
+        Contents od DLL are
+        ----------
+         3       5
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 2
+        Adding to left of item : 5
+        Enter the item tio be inserted to left of ritem 5 :4
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 4
+        Contents od DLL are
+        ----------
+         3       4       5
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 3
+        Enter ket to delete : 4
+        Key found at 1 positions and are deleted
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 4
+        Contents od DLL are
+        ----------
+         3       5
+        Enter 1:Create, 2:Insert to left of element, 3:Deleete All, 4:Display, 5:Exit
+        Enter your choice : 5
+        TERMINATING.
 */
 
 #include <stdio.h>
@@ -40,6 +71,7 @@ NODE create(int item, NODE head)
     NODE current, temp = getnode();
     temp->info = item;
     current = head->r;
+    head->r = temp;
     temp->l = head;
     temp->r = current;
     current->l = temp;
@@ -127,6 +159,7 @@ void display(NODE head)
     {
         pf(" %d\t", temp->info);
     }
+    pf("\n");
 }
 
 int main()
@@ -163,7 +196,7 @@ int main()
                     display(head);
                     break;
 
-            case 7 :
+            case 5 :
                     pf("TERMINATING.\n");
                     exit(0);
                     break;
