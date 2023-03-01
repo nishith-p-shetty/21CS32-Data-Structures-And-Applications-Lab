@@ -5,7 +5,31 @@
         the collision (if any) using linear probing.
 
     OUTPUT :
-
+        ...... HASH FUNCTION MENU........
+        1:Insert, 2:Display, 3:Exit
+        Enter your choice : 1
+        Enter employee ID : 23
+        Enter employee name : asd
+        ...... HASH FUNCTION MENU........
+        1:Insert, 2:Display, 3:Exit
+        Enter your choice : 1
+        Enter employee ID : 45
+        Enter employee name : fgh
+        ...... HASH FUNCTION MENU........
+        1:Insert, 2:Display, 3:Exit
+        Enter your choice : 1
+        Enter employee ID : bnn
+        Enter employee name : ...... HASH FUNCTION MENU........
+        1:Insert, 2:Display, 3:Exit
+        Enter your choice : 2
+        Contents of hash table :
+        H_value Emp_id  Emp_name
+        23      23      asd
+        45      45      fgh
+        46      45      bnn
+        ...... HASH FUNCTION MENU........
+        1:Insert, 2:Display, 3:Exit
+        Enter your choice : 3
 */
 
 #include<stdio.h>
@@ -63,7 +87,6 @@ void display_hash_table(EMPLOYEE a[], int n)
         if(a[i].id != 0)
             pf("%d\t%d\t%s\n", i, a[i].id, a[i].name);
     }
-    printf("\n");
 }
 
 int main()
