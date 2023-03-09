@@ -96,7 +96,6 @@ NODE addAtLeft(int ritem, NODE head)
         return head;
     }
     previous = current->l;
-    temp = getnode();
     pf("Enter the item tio be inserted to left of ritem %d :", ritem);
     sf("%d", &temp->info);
     previous->r = temp;
