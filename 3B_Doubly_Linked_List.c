@@ -108,7 +108,7 @@ NODE addAtLeft(int ritem, NODE head)
 NODE deleteAll(int item, NODE head)
 {
     NODE previous, current, next;
-    int count = 0;
+    int flag = 0,count = 0;
     if (head->r == head)
     {
         pf("List is empty\n");
@@ -120,10 +120,11 @@ NODE deleteAll(int item, NODE head)
         if (item != current->info)
         {
             current = current->r;
+            count++;
         }
         else
         {
-            count++;
+            flag = 1;
             previous = current->l;
             next = current->r;
             previous->r = next;
@@ -132,7 +133,7 @@ NODE deleteAll(int item, NODE head)
             current = next;
         }
     }
-    if ( count == 0 )
+    if ( flag == 0 )
     {
         pf("Key not found\n");
     }
