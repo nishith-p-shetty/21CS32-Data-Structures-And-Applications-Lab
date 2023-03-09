@@ -37,26 +37,26 @@
 #define pf printf
 #define sf scanf
 
-void dfs(int n, int a[10][10], int u, int t[10][10], int s[])
+void dfs(int n, int adj_mx[10][10], int source, int temp[10][10], int visited[])
 {
-    int v;
+    int i;
     static int k = 0;
-    s[u] = 1;
-    for (v = 0 ; v < n ; v++)
+    visited[source] = 1;
+    for (i = 0 ; i < n ; i++)
     {
-        if ( a[u][v] == 1 && s[v] == 0)
+        if ( adj_mx[source][i] == 1 && visited[i] == 0)
         {
-            t[k][0] = u;
-            t[k][1] = v;
+            temp[k][0] = source;
+            temp[k][1] = i;
             k++;
-            dfs(n, a, v, t, s);
+            dfs(n, adj_mx, i, temp, visited);
         }
     }
 }
 
 int main()
 {
-    int n, i, j, u, source, a[10][10], s[10], t[10][10];
+    int n, i, j, source, adj_mx[10][10], visited[10], temp[10][10];
     pf("Enter the number of nodes : ");
     sf("%d", &n);
     pf("Enter the Adjacency Matrix :\n");
@@ -64,7 +64,7 @@ int main()
     {
         for (j = 0 ; j < n ; j++)
         {
-            sf("%d", &a[i][j]);
+            sf("%d", &adj_mx[i][j]);
         }
     }
     pf("The Adjacency Matrix is :\n");
@@ -72,20 +72,20 @@ int main()
     {
         for (j = 0 ; j < n ; j++)
         {
-            pf("%d ", a[i][j]);
+            pf("%d ", adj_mx[i][j]);
         }
         pf("\n");
     }
     pf("Enter the source vertex : ");
-    sf("%d", &u);
+    sf("%d", &source);
     for (i = 0 ; i < n ; i++)
     {
-        s[i] = 0;
+        visited[i] = 0;
     }
-    dfs(n, a, u, t, s);
+    dfs(n, adj_mx, source, temp, visited);
     for (i = 0 ; i < n ; i++)
     {
-        if (s[i] == 1)
+        if (visited[i] == 1)
         {
             pf("%d is reachable\n", i);
         }

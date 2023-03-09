@@ -78,11 +78,11 @@ void insert_hash_table(int id, char name[], EMPLOYEE a[])
         pf("Hash Table Full!\n");
 }
 
-void display_hash_table(EMPLOYEE a[], int n)
+void display_hash_table(EMPLOYEE a[])
 {
     int k, i;
     pf("H_value\tEmp_id\tEmp_name\n");
-    for(i = 0 ; i < n ; i++)
+    for(i = 0 ; i < HASH_SIZE ; i++)
     {
         if(a[i].id != 0)
             pf("%d\t%d\t%s\n", i, a[i].id, a[i].name);
@@ -93,7 +93,7 @@ int main()
 {
     EMPLOYEE a[HASH_SIZE];
     char name[20];
-    int key, id, choice, flag;
+    int id, choice;
     initialize_hash_table(a);
     while(1)
     {
@@ -112,7 +112,7 @@ int main()
                     break;
             case 2:
                     pf("Contents of hash table :\n");
-                    display_hash_table(a, HASH_SIZE);
+                    display_hash_table(a);
                     break;
             case 3:
                     exit(0);
