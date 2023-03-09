@@ -185,7 +185,7 @@ int main()
                     break;
 
             case 3 :
-                    pf("Enter ket to delete : ");
+                    pf("Enter key to delete : ");
                     sf("%d", &item);
                     head = deleteAll(item, head);
                     break;
