@@ -60,7 +60,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #define pf printf
 #define sf scanf
